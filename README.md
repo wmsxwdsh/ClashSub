@@ -1,1 +1,1 @@
-# ClashIni
+# ClashSub

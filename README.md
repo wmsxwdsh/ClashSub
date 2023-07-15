@@ -14,6 +14,6 @@ https://raw.githubusercontent.com/wmsxwdsh/ClashSub/main/wmsxwdsh20230715.ini
 
 2023-06-18
 （1）新增了 Manual、HK Select、US Select
-（2）新增了 AiChat、Game、BT&PT、Emby、TikTok 分流
+（2）新增了 AiChat、TikTok、Emby、PT、Game 分流
 ```
 

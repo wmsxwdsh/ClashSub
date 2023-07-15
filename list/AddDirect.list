@@ -1,1 +1,10 @@
+# 自定义直连
+
+# 发现
+DOMAIN-SUFFIX,yuque.com
+DOMAIN-SUFFIX,deepl.com
+
+# 机场
 DOMAIN-SUFFIX,nxboom.com
+
+

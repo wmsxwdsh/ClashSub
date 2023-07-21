@@ -8,4 +8,6 @@ DOMAIN-SUFFIX,deepl.com
 # 机场
 DOMAIN-SUFFIX,nxboom.com
 
+# Emby
+DOMAIN,media.nijigem.by
 

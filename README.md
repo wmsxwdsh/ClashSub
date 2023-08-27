@@ -10,7 +10,7 @@ https://raw.githubusercontent.com/wmsxwdsh/ClashSub/main/wmsxwdsh20230715.ini
 ```
 
 更新日志：
-```bash
+```text
 
 2023-06-18
 （1）新增了 Manual、HK Select、US Select

@@ -11,6 +11,10 @@ https://raw.githubusercontent.com/wmsxwdsh/ClashSub/main/wmsxwdsh20230715.ini
 
 更新日志：
 ```text
+2023-08-30
+（1）telegram 规则集更换成 blackmatrix7
+（2）game 规则集更换成 blackmatrix7
+（3）Google 和 Youtube 规则集合并，用 Google 策略组
 
 2023-06-18
 （1）新增了 Manual、HK Select、US Select

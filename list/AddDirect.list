@@ -8,6 +8,7 @@ DOMAIN,imap.88.com
 
 # 机场
 DOMAIN-SUFFIX,nxboom.com
+DOMAIN-SUFFIX,coffeecloud.top
 
 # Emby
 DOMAIN,media.nijigem.by

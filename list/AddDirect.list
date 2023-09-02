@@ -1,11 +1,5 @@
 # 自定义直连
 
-# 发现
-DOMAIN-SUFFIX,yuque.com
-DOMAIN-SUFFIX,nlark.com
-DOMAIN-SUFFIX,deepl.com
-DOMAIN,imap.88.com
-
 # 起飞
 DOMAIN-SUFFIX,nxboom.com
 DOMAIN-SUFFIX,coffeecloud.top
@@ -14,5 +8,12 @@ DOMAIN-SUFFIX,coffeecloud.top
 DOMAIN,media.nijigem.by
 
 # 网站
-DOMAIN,parallels.com
+DOMAIN-SUFFIX,parallels.com
+
+# 发现
+DOMAIN-SUFFIX,yuque.com
+DOMAIN-SUFFIX,nlark.com
+DOMAIN-SUFFIX,deepl.com
+DOMAIN,imap.88.com
+
 

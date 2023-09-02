@@ -1,12 +1,10 @@
 # 自定义直连
 
-# 发现
+# Client
 DOMAIN-SUFFIX,yuque.com
 DOMAIN-SUFFIX,nlark.com
 DOMAIN-SUFFIX,deepl.com
 DOMAIN,imap.88.com
-DOMAIN-SUFFIX,parallels.com
-DOMAIN-SUFFIX,newsmth.net
 
 # Emby
 DOMAIN,media.nijigem.by
@@ -14,4 +12,11 @@ DOMAIN,media.nijigem.by
 # 起飞
 DOMAIN-SUFFIX,nxboom.com
 DOMAIN-SUFFIX,coffeecloud.top
+
+# 网站
+DOMAIN-SUFFIX,parallels.com
+DOMAIN-SUFFIX,newsmth.net
+DOMAIN-SUFFIX,mysmth.net
+
+
 

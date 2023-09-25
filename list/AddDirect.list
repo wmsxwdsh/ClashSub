@@ -8,9 +8,6 @@ DOMAIN-SUFFIX,nlark.com
 DOMAIN-SUFFIX,deepl.com
 # > 88 email
 DOMAIN,imap.88.com
-# > bob invoke apple tranlator
-DOMAIN,sequoia.apple.com
-DOMAIN,seed-sequoia.siri.apple.com
 
 
 # Emby

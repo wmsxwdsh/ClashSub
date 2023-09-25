@@ -1,10 +1,17 @@
 # 自定义直连
 
 # Client
+# > yuque
 DOMAIN-SUFFIX,yuque.com
 DOMAIN-SUFFIX,nlark.com
+# > deepl
 DOMAIN-SUFFIX,deepl.com
+# > 88 email
 DOMAIN,imap.88.com
+# > bob invoke apple tranlator
+DOMAIN,sequoia.apple.com
+DOMAIN,seed-sequoia.siri.apple.com
+
 
 # Emby
 DOMAIN,media.nijigem.by

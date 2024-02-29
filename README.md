@@ -20,7 +20,7 @@ https://raw.githubusercontent.com/wmsxwdsh/ClashSub/main/wmsxwdsh20230715.ini
 订阅转换网址列表：
 
 ```bash
-奶昔, https://nexconvert.com/
-库洛米, https://sublink.dev
+奶昔 官方的, https://nexconvert.com/
+歪兔 推荐的之一, https://sub-web.wcc.best/
 ACL4SSR, https://acl4ssr-sub.github.io/
 ```

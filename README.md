@@ -22,5 +22,5 @@ https://raw.githubusercontent.com/wmsxwdsh/ClashSub/main/wmsxwdsh20230715.ini
 ```bash
 奶昔 官方的, https://nexconvert.com/
 歪兔 推荐的之一, https://sub-web.wcc.best/
-ACL4SSR, https://acl4ssr-sub.github.io/
+ACL4SSR 官方的, https://acl4ssr-sub.github.io/
 ```

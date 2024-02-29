@@ -13,7 +13,7 @@ https://raw.githubusercontent.com/wmsxwdsh/ClashSub/main/wmsxwdsh20230715.ini
 如果过滤部分节点：
 
 ```bash
-距离|重置|过期|到期|剩余|GB|Traffic|Expire|Traffic Reset|Expire Date
+距离|重置|过期|到期|剩余|GB|Traffic|Expire
 ```
 
 <br/>

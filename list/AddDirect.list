@@ -12,9 +12,6 @@ DOMAIN,imap.88.com
 # Emby
 DOMAIN,media.nijigem.by
 
-# 起飞
-DOMAIN-SUFFIX,nxboom.com
-
 # 网站
 DOMAIN-SUFFIX,newsmth.net
 DOMAIN-SUFFIX,mysmth.net

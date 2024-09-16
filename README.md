@@ -24,4 +24,10 @@ https://raw.githubusercontent.com/wmsxwdsh/ClashSub/main/wmsxwdsh20230715.ini
 歪兔 推荐的之一, https://sub-web.wcc.best/
 ACL4SSR 官方的, https://acl4ssr-sub.github.io/
 ```
+<br/>
+注意：<br/>
+有的时候，订阅转换后导入不成功，是因为用的机场屏蔽了那个转换网址。<br/>
+解决办法也简单，换个转换网址，重新转换。<br/>
+
+<br/>
 

@@ -1,6 +1,6 @@
 # ClashSub
 
-改自于 blackmatrix7 + ACL4SSR
+这是个订阅转换的远程配置，改自于 blackmatrix7 + ACL4SSR
 <br/>
 <br/>
 
@@ -24,3 +24,4 @@ https://raw.githubusercontent.com/wmsxwdsh/ClashSub/main/wmsxwdsh20230715.ini
 歪兔 推荐的之一, https://sub-web.wcc.best/
 ACL4SSR 官方的, https://acl4ssr-sub.github.io/
 ```
+

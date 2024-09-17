@@ -13,7 +13,28 @@
 # 🇿🇦
 # 🇨🇦🇨🇱🇧🇷🇦🇷🇦🇺🇳🇿
 emoji=(澳门|MO|Macao|Macau),🇲🇴
-  
+
+
+
+# 2024-09-17
+
+# > 局域网地址
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list,DIRECT
+
+# > 最后
+RULE-SET, https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ProxyLite/ProxyLite.list, 🚀️ 法外狂徒
+RULE-SET, https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.list, 🧩 国内直连
+# > 最后
+RULE-SET, https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list, 🚀️ 法外狂徒
+RULE-SET, https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China.list, 🧩 国内直连
+# LAN 包括了 'local' 后缀和私有 IP 地址。注意：这个规则集会触发 DNS 查询。
+RULE-SET,LAN,🧩 国内直连
+# GeoIP China
+GEOIP,CN,🧩 国内直连
+# 兜底规则
+FINAL,黑白名单,dns-failed
+
+
   
 # > interval（间隔）300，每300秒测一次。
 # > timeout（超时）5（默认是5秒，空就是默认），超过5秒没有应答就放弃。

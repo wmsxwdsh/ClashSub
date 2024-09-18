@@ -5,6 +5,18 @@
 # 帮助中心 - https://nssurge.zendesk.com/
 # 技术社区 - https://community.nssurge.com
 
+# 2024-09-17
+# 参考
+# 1、老刘（最简配置）
+# https://gist.githubusercontent.com/Zeaphyou/864aebea248ca1bb8000e0e5623b65f3/raw/c36413c715f43f22772d3c2353358e1ff936b2e6/Surge.conf
+# 
+# 2、Lucy
+# https://raw.githubusercontent.com/As-Lucky/Lucky/main/Lucky-Surge.conf
+# 
+# 3、深港有猫（比较中意的）
+# https://raw.githubusercontent.com/Rabbit-Spec/Surge/Master/Conf/Spec/Surge.conf
+# 
+
 [custom]
 # 国旗
 # 🇨🇳🇭🇰🇸🇬🇯🇵🇺🇸🇲🇴
@@ -18,21 +30,41 @@ emoji=(澳门|MO|Macao|Macau),🇲🇴
 
 # 2024-09-17
 
+当前版本：5.8.0(2900)
+
 # > 局域网地址
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list,DIRECT
 
-# > 最后
+# > 最后（我原来的）
 RULE-SET, https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ProxyLite/ProxyLite.list, 🚀️ 法外狂徒
 RULE-SET, https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.list, 🧩 国内直连
 # > 最后
+# 文件区别（ https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/China/README.md ）
+# China_All.list与China_All_No_Resolve.list为 Surge 5.21.0(2952) 以上版本使用 ---- 当前版本：5.8.0(2900)
+# China_Resolve.list与China.list的区别仅在于后者IP-CIDR(6)类型带no-resolve。
 RULE-SET, https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list, 🚀️ 法外狂徒
-RULE-SET, https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China.list, 🧩 国内直连
+RULE-SET, https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China_All_No_Resolve.list, 🧩 国内直连
+# > 最后（目前先用这个）
+RULE-SET, https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_Resolve.list, 🚀️ 法外狂徒
+RULE-SET, https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China_Resolve.list, 🧩 国内直连
 # LAN 包括了 'local' 后缀和私有 IP 地址。注意：这个规则集会触发 DNS 查询。
 RULE-SET,LAN,🧩 国内直连
 # GeoIP China
 GEOIP,CN,🧩 国内直连
 # 兜底规则
 FINAL,黑白名单,dns-failed
+
+# 关于 no-resolve，Surge 官方手册的解释如下：
+根据 IP 判断的规则的可选项
+选项: no-resolve
+
+GEOIP,US,DIRECT,no-resolve
+IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+
+当 GEOIP 或者 IP-CIDR 规则被触发， Surge 会发送一个解析请求去检查主机名是否为一个域名。你可以加上 “no-resolve” 以跳过这个过程。
+
+请注意: 如果本地 DNS 服务器无法解析某些域名，请确保在这个规则前没有基于 IP 的规则会匹配到这个域名。
+否则，由于 DNS 解析错误， 规则测试将失败。你可以用“no-resolve”来解决这个问题。
 
 
   

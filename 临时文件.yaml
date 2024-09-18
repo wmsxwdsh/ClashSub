@@ -29,8 +29,16 @@ emoji=(澳门|MO|Macao|Macau),🇲🇴
 
 
 # 2024-09-17
-
 当前版本：5.8.0(2900)
+
+# Surge 官方手册的解释如下：
+# 增加了 SRC-PORT 规则用于匹配客户端端口号。
+# IN-PORT/SRC-PORT/DEST-PORT 三条规则被归类为端口号规则类型，支持三种表达式：
+# 直接写端口号，如 IN-PORT,6153
+# 端口号闭区间：如 DEST-PORT,10000-20000
+# 使用 >, <, <=, >= 操作符，如 SRC-PORT,>=50000
+DEST-PORT,123,🧩 国内直连
+
 
 # > 局域网地址
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list,DIRECT

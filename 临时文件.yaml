@@ -27,8 +27,8 @@ url-test/fallback/load-balance 策略组不再可以单独配置测速用 URL，
  
 # url-test 策略组
 timeout 默认 5s
-interval 默认86400s（24h）
-tolerance 默认100ms
+interval 默认 86400s（24h）
+tolerance 默认 100ms
 url：用于测试的 URL。 ----- 过时，参考上一条。
 timeout：测试的最长等待时间，超过该时间的策略将标记为失败不再继续等待。
 interval：每次测试的间隔时间。所有类 url-test 组的测试时机为：

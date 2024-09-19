@@ -18,28 +18,46 @@
 # 
 
 [custom]
-# 国旗
-# 🇨🇳🇭🇰🇸🇬🇯🇵🇺🇸🇲🇴
-# 🇷🇺🇮🇪🇬🇧🇫🇷🇩🇪🇳🇱🇱🇺🇮🇹🇦🇹🇭🇺🇪🇸🇵🇹🇲🇩🇺🇦🇷🇴🇦🇱
-# 🇰🇵🇰🇷🇵🇭🇮🇳🇻🇳🇰🇭🇹🇭🇲🇾🇮🇩🇰🇿🇵🇰🇮🇱🇹🇷🇦🇪🇪🇬
-# 🇿🇦
-# 🇨🇦🇨🇱🇧🇷🇦🇷🇦🇺🇳🇿
-emoji=(澳门|MO|Macao|Macau),🇲🇴
+# Surge 的一些说明
 
-
-
+# Surge 4 4.10.0 (1867) is ready to test on iOS.
+该版本完全重构了策略组功能，带来了以下变化：
+url-test/fallback/load-balance 策略组不再可以单独配置测速用 URL，只可以使用全局的测速 URL 或者策略配置的测速 URL。
+该修改后策略的测速结果可直接用于所有策略组的决策中，不再需要为每个策略组都单独重测。
+ 
+# url-test 策略组
+timeout 默认 5s
+interval 默认86400s（24h）
+tolerance 默认100ms
+url：用于测试的 URL。 ----- 过时，参考上一条。
+timeout：测试的最长等待时间，超过该时间的策略将标记为失败不再继续等待。
+interval：每次测试的间隔时间。所有类 url-test 组的测试时机为：
+（1）首次使用时进行测试。
+（2）后续使用该策略组时，如果上次测试的时间间隔已大于 interval 设置时间，则再次触发测试。
+（3）当目前选中策略产生不可恢复性错误时，直接触发测试。
+（4）网络切换后，将清理之前的测试结果，当策略组被使用时触发首次测试。
+tolerance：容忍度，如果某几个策略测试结果相差不大，那么会导致在这几个策略中频繁切换，
+如果策略的代理服务器的出口 IP 不同，可能会触发目标网站的风险控制。
+所以加入了容忍度设计，仅当新一次的测试结果中，“最佳策略比原选中策略的延迟差大于容忍度时”，才会切换至新的策略。
+evaluate-before-use：默认情况下，在首次使用策略组时将直接使用子策略中的第一个策略，同时触发延迟测试。
+如果配置了 evaluate-before-use=true，那么首次使用时将等待测试完毕后选择最佳策略。
+再具体点，就是：evaluate-before-use=true 当策略组测试未完成时，将会堵塞住对应请求，等待测试完毕后使用测试结果再继续。
+---- 验证后，timeout\interval\tolerance 为 0，和没有设置是一样的，采用默认值。
+  
+# 关于 DEST-PORT，Surge 官方手册的解释，如下：
+增加了 SRC-PORT 规则用于匹配客户端端口号。
+IN-PORT/SRC-PORT/DEST-PORT 三条规则被归类为端口号规则类型，支持三种表达式：
+直接写端口号，如 IN-PORT,6153
+端口号闭区间：如 DEST-PORT,10000-20000
+使用 >, <, <=, >= 操作符，如 SRC-PORT,>=50000
+DEST-PORT,123,🧩 国内直连
+  
+# ----------------------------------------
+  
 # 2024-09-17
 当前版本：5.8.0(2900)
-
-# Surge 官方手册的解释如下：
-# 增加了 SRC-PORT 规则用于匹配客户端端口号。
-# IN-PORT/SRC-PORT/DEST-PORT 三条规则被归类为端口号规则类型，支持三种表达式：
-# 直接写端口号，如 IN-PORT,6153
-# 端口号闭区间：如 DEST-PORT,10000-20000
-# 使用 >, <, <=, >= 操作符，如 SRC-PORT,>=50000
+  
 DEST-PORT,123,🧩 国内直连
-
-
 # > 局域网地址
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list,DIRECT
 
@@ -48,7 +66,7 @@ RULE-SET, https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/
 RULE-SET, https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.list, 🧩 国内直连
 # > 最后
 # 文件区别（ https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/China/README.md ）
-# China_All.list与China_All_No_Resolve.list为 Surge 5.21.0(2952) 以上版本使用 ---- 当前版本：5.8.0(2900)
+# China_All.list与China_All_No_Resolve.list为 Surge 5.21.0(2952) 以上版本使用 ---- 当前版本：5.8.0(2900) | 2024-09-17
 # China_Resolve.list与China.list的区别仅在于后者IP-CIDR(6)类型带no-resolve。
 RULE-SET, https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list, 🚀️ 法外狂徒
 RULE-SET, https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China_All_No_Resolve.list, 🧩 国内直连
@@ -62,7 +80,7 @@ GEOIP,CN,🧩 国内直连
 # 兜底规则
 FINAL,黑白名单,dns-failed
 
-# 关于 no-resolve，Surge 官方手册的解释如下：
+# 关于 no-resolve，Surge 官方手册的，解释如下：
 根据 IP 判断的规则的可选项
 选项: no-resolve
 
@@ -74,8 +92,18 @@ IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
 请注意: 如果本地 DNS 服务器无法解析某些域名，请确保在这个规则前没有基于 IP 的规则会匹配到这个域名。
 否则，由于 DNS 解析错误， 规则测试将失败。你可以用“no-resolve”来解决这个问题。
 
-
+# ----------------------------------------
+# 下面的是 “远程订阅转换” 相关的
   
+# 国旗
+# 🇨🇳🇭🇰🇸🇬🇯🇵🇺🇸🇲🇴
+# 🇷🇺🇮🇪🇬🇧🇫🇷🇩🇪🇳🇱🇱🇺🇮🇹🇦🇹🇭🇺🇪🇸🇵🇹🇲🇩🇺🇦🇷🇴🇦🇱
+# 🇰🇵🇰🇷🇵🇭🇮🇳🇻🇳🇰🇭🇹🇭🇲🇾🇮🇩🇰🇿🇵🇰🇮🇱🇹🇷🇦🇪🇪🇬
+# 🇿🇦
+# 🇨🇦🇨🇱🇧🇷🇦🇷🇦🇺🇳🇿
+emoji=(澳门|MO|Macao|Macau),🇲🇴
+
+
 # > interval（间隔）300，每300秒测一次。
 # > timeout（超时）5（默认是5秒，空就是默认），超过5秒没有应答就放弃。
 # > tolerance（容忍）100，比上次最低延迟快 100ms（这里是毫秒），就启用新节点。

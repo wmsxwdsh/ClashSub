@@ -8,6 +8,11 @@ DOMAIN-SUFFIX,nlark.com
 DOMAIN-SUFFIX,deepl.com
 # > 88 email
 DOMAIN,imap.88.com
+# > eagle
+DOMAIN-SUFFIX,eagle.cool
+# > jetbrains
+DOMAIN-SUFFIX,jetbrains.com
+
 
 # Emby
 DOMAIN,media.nijigem.by

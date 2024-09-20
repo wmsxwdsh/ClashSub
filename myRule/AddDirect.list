@@ -10,8 +10,6 @@ DOMAIN-SUFFIX,deepl.com
 DOMAIN,imap.88.com
 # > eagle
 DOMAIN-SUFFIX,eagle.cool
-# > jetbrains
-DOMAIN-SUFFIX,jetbrains.com
 
 
 # Emby

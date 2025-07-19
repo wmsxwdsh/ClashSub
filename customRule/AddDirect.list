@@ -15,6 +15,10 @@ DOMAIN-SUFFIX,eagle.cool
 # Emby
 DOMAIN,media.nijigem.by
 
-# 网站
+# Airport
+DOMAIN-SUFFIX,amytele.net
+DOMAIN-SUFFIX,immtele.com
+
+# Website
 DOMAIN-SUFFIX,newsmth.net
 DOMAIN-SUFFIX,mysmth.net

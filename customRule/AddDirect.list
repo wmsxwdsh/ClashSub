@@ -12,13 +12,9 @@ DOMAIN,imap.88.com
 DOMAIN-SUFFIX,eagle.cool
 
 
-# Emby
-DOMAIN,media.nijigem.by
-
-# Airport
-DOMAIN-SUFFIX,amytele.net
-DOMAIN-SUFFIX,immtele.com
-
 # Website
 DOMAIN-SUFFIX,newsmth.net
 DOMAIN-SUFFIX,mysmth.net
+
+# Emby
+DOMAIN,media.nijigem.by
